@@ -5,7 +5,7 @@ from data_handler import parse_arguments, load_params
 from generate_dataset import generate_dataset
 from networks import get_network
 from training import train
-from analysis import compute_spectral_norm
+from utils import compute_spectral_norm
 from plotting import plot_actual_and_predictions
 import pprint
 
