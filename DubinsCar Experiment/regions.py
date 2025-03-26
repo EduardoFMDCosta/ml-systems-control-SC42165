@@ -21,10 +21,10 @@ class HyperRectangle:
 
         return self.lower.size(dim)
 
+    def random_points(self, num_samples: int):
+        return self.lower + (self.upper - self.lower) * torch.rand((num_samples, self.lower.shape[0]))
+
     @staticmethod
     def from_eps(x, eps):
         lower, upper = x - eps, x + eps
         return HyperRectangle(lower, upper)
-
-    def get_random_points(self, num_samples):
-        return self.lower + (self.upper - self.lower) * torch.rand((num_samples, self.lower.shape[0]))
