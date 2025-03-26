@@ -1,5 +1,5 @@
 import torch
-from bound_propagation import HyperRectangle
+from regions import HyperRectangle
 from dynamics import get_dynamics
 from data_handler import parse_arguments, load_params
 from generate_dataset import generate_dataset
@@ -14,11 +14,11 @@ if __name__ == '__main__':
 
     args = parse_arguments(
         dynamics_type = "Pendulum",
-        num_samples = 10000,
-        num_steps = 20,
-        regenerate_set = False,
-        num_epochs = 2,
-        batch_size = 16,
+        num_samples = 100000,
+        num_steps = 1,
+        regenerate_set = True,
+        num_epochs = 10,
+        batch_size = 32,
         lr = 0.001,
         weight_decay = 0.00001
     )

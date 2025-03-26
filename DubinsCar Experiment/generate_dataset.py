@@ -8,7 +8,7 @@ def generate_dataset(dynamics: Dynamics,
                      n_steps: int):
 
     data_pairs = []
-    states = hypercube.get_random_points(n_samples)
+    states = hypercube.random_points(n_samples)
 
     for t in range(n_steps):
         previous_states = states.clone().detach()
