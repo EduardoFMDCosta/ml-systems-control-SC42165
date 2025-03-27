@@ -1,5 +1,6 @@
 import torch.nn as nn
 import torch.nn.functional as F
+import torch.nn.utils.parametrizations as parametrize
 
 class NeuralDubinsCar(nn.Module):
 
@@ -32,15 +33,12 @@ class NeuralPendulum(nn.Module):
 
     def forward(self, x):
 
-        residual = x
-
         x = self.fc1(x)
         x = F.sigmoid(x)
         x = self.fc2(x)
         x = F.sigmoid(x)
         x = self.fc3(x)
 
-        x = x + residual
         return x
 
 

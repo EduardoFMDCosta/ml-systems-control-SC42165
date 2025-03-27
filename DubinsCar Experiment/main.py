@@ -14,13 +14,13 @@ if __name__ == '__main__':
 
     args = parse_arguments(
         dynamics_type = "Pendulum",
-        num_samples = 100000,
+        num_samples = 300000,
         num_steps = 1,
         regenerate_set = True,
         num_epochs = 10,
         batch_size = 32,
         lr = 0.001,
-        weight_decay = 0.00001
+        weight_decay = 0.0001
     )
     params = load_params(args)
 

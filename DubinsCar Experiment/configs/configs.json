@@ -7,10 +7,10 @@
         "disc_step": 0.1
     },
    "Pendulum": {
-        "lower": [-3.0, -3.0],
-        "upper": [3.0, 3.0],
-        "gravity": 9.8,
-        "length": 2.0,
+        "lower": [-1.0, -0.5],
+        "upper": [1.0, 0.5],
+        "gravity": 0.9,
+        "length": 1.0,
         "mass": 1.0,
         "friction": 0.8,
         "disc_step": 0.05

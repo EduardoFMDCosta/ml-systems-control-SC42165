@@ -5,6 +5,11 @@ import torch.optim as optim
 from data_handler import get_data
 from torch.utils.data import TensorDataset, DataLoader
 
+def spectral_norm_regularization(layer, lambda_reg=0.01):
+    W = layer.weight
+    u, s, v = torch.svd(W)
+    return lambda_reg * torch.max(s)
+
 def train(net: nn.Module,
           num_epochs: int,
           batch_size: int,
@@ -41,13 +46,10 @@ def train(net: nn.Module,
             # Training
             optimizer.zero_grad()
             y_batch_pred = net(x_batch)
+            #reg_loss = sum(spectral_norm_regularization(layer) for layer in net.modules() if isinstance(layer, nn.Linear))
             loss = loss_func(y_batch_pred, y_batch)
             loss.backward()
             optimizer.step()
-
-            with torch.no_grad():
-                for param in net.parameters():
-                    param.clamp_(-1, 1)
 
             loss_epoch += loss
 
