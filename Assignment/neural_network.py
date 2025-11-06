@@ -1,11 +1,11 @@
-import torch
 import torch.nn as nn
-import torch.optim as optim
 import torch.nn.functional as F
 
-class Neural_Network_Dynamics(nn.Module):  # inherit the nn.Module class for backpropagation and training functionalities
+class NeuralNetworkDynamics(nn.Module):  # inherit the nn.Module class for backpropagation and training functionalities
     def __init__(self):
-        super(Neural_Network_Dynamics, self).__init__()
+        super(NeuralNetworkDynamics, self).__init__()
+        # TODO: Implement a Neural Network with at least 3 layers, and ReLU activation
+        # TODO: You can consult, for instance: https://docs.pytorch.org/tutorials/beginner/basics/buildmodel_tutorial.html
         self.fc1 = nn.Linear(5, 10, bias=True)  # fully connected layer from 3 to 10 dimensions
         self.fc2 = nn.Linear(10, 3, bias=True)  # fully connected layer from 10 to 3 dimensions
 
