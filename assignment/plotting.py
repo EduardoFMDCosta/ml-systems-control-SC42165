@@ -39,7 +39,6 @@ def plot_environment(safe_set, obstacle, target, reference_trajectory_for_positi
 
 
 def plot_position_trajectories(traj_nn, traj_oracle, labels=("Neural Network", "Oracle")):
-    # TODO: Implement a plotting method for the position coordinates of the trajectories
     # Extract x, y for both trajectories
     x1, y1 = traj_nn[:, 0].numpy(), traj_nn[:, 1].numpy()
     x2, y2 = traj_oracle[:, 0].numpy(), traj_oracle[:, 1].numpy()
@@ -55,4 +54,3 @@ def plot_position_trajectories(traj_nn, traj_oracle, labels=("Neural Network", "
     plt.grid(True)
     plt.legend()
     plt.show()
-
